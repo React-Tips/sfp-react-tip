@@ -1,50 +1,111 @@
-# React + TypeScript + Vite
+# Sustainable Finance Platform (SFP)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![SFP Logo](./src/assets/header-image.png)
 
-Currently, two official plugins are available:
+Welcome to the **Sustainable Finance Platform**! This application helps banks and financial institutions easily manage and report their ESG (Environmental, Social, and Governance) data, simplifying the process of tracking and reporting how "green" their loans are.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Testing](#testing)
+- [Folder Structure](#folder-structure)
 
-## Expanding the ESLint configuration
+## Overview
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+The **SFP** enables banks to track, manage, and report the alignment and eligibility of their loans with environmental objectives, such as:
+- Carbon Capture and Mitigation (CCM)
+- Climate Change Adaptation (CCA)
 
-- Configure the top-level `parserOptions` property like this:
+It provides an interface for viewing detailed reports on loan alignments, exposure, and environmental eligibility data.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Features
+
+- Loan exposure and alignment overview
+- Detailed loan alignment for CCM and CCA
+- Easy-to-use and scalable UI with **React**
+- Responsive design using **@ui5/webcomponents-react**
+- JSON-based data structure for easy integration
+- Simple number formatting for readability
+
+## Installation
+
+To get started with this project locally, follow these steps:
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/AdrianBirta/sustainable-finance-platform.git
+cd sustainable-finance-platform
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### Install Dependencies
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+npm install
 ```
+
+## Usage
+
+To start the development server and view the application locally:
+
+```bash
+npm run dev
+```
+
+The app will run on `http://localhost:5173` by default.
+
+### Data Structure
+Data for loans, products, and environmental KPIs are fetched from a local JSON file (`loans.json`). To view or modify this data, locate the file in the `/public` directory.
+
+## Testing
+
+This project uses **Cypress** for component testing. Here's how to run the tests:
+
+### Run Cypress Tests
+
+- Install Cypress (if not installed):
+```bash
+npm install cypress --save-dev
+```
+
+- To run component tests, use the following command:
+```bash
+npm run cypress:run
+```
+
+This will run Cypress component tests without recording videos (`--config video=false`) as defined in the `package.json` script:
+
+```json
+"scripts": {
+  "cypress:run": "cypress run --config video=false --component"
+}
+```
+
+### Cypress Configuration
+
+- **Component Testing**: The `--component` flag in the script ensures Cypress runs in component testing mode.
+- **Video**: The `--config video=false` flag disables video recording during tests to save resources.
+
+## Folder Structure
+
+The project is organized as follows:
+
+
+- **sustainable-finance-platform/**
+  - **public/** - Static assets, JSON data
+    - `loans.json` - Loan and product data
+  - **src/**
+    - **assets/** - Images and icons
+      - `tree.png` - Example image
+      - `message.png` - Example image
+    - **components/** - React components and Cypress test
+      - `TableCustom.tsx` - Main table component
+      - `TableCustom.cy.tsx` - Cypress component test for `TableCustom`
+      - `interfaces.interface.ts` - TypeScript interfaces
+    - `App.tsx` - Main entry point of the app
+    - `App.css` - Main styling
+    - `index.tsx` - React DOM rendering
+  - `package.json` - Project metadata and dependencies
+  - `README.md` - This file

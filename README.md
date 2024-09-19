@@ -1,6 +1,8 @@
 # Sustainable Finance Platform (SFP)
 
-![SFP Logo](./src/assets/header-image.png)
+<p align="center">
+  <img src="./src/assets/header-image.png" alt="SFP Logo" width="800"/>
+</p>
 
 Welcome to the **Sustainable Finance Platform**! This application helps banks and financial institutions easily manage and report their ESG (Environmental, Social, and Governance) data, simplifying the process of tracking and reporting how "green" their loans are.
 

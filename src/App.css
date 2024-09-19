@@ -1,0 +1,113 @@
+/* General Layout */
+.appWrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Navigation Styles */
+.navMenu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  flex-wrap: wrap;
+}
+
+.navLogo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.navLogo img {
+  margin-right: -10px;
+}
+
+.navLogo span {
+  font-size: 2rem;
+  color: #666;
+}
+
+.navList {
+  list-style: none;
+  min-width: 400px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navList a {
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #666;
+  transition: color 0.2s ease-in-out;
+}
+
+.navList a:hover {
+  color: #aaa;
+}
+
+/* Header Styles */
+header {
+  margin: 4rem 0;
+  padding: 1rem 0;
+}
+
+.headerContent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.headerContentLeft {
+  flex-basis: 60%;
+}
+
+.headerContentLeft h1 {
+  font-size: 4rem;
+}
+
+.headerContentLeft small {
+  font-size: 1.5rem;
+  color: #666;
+}
+
+.headerContentRight {
+  flex-basis: 40%;
+  min-width: 300px;
+}
+
+.headerContentRight img {
+  width: 100%;
+}
+
+/* Header Panel Styles */
+.headerPanel {
+  margin-top: 2rem;
+  /* added margin for separation */
+}
+
+.headerPanelDetails {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.headerPanelDetails p {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #666;
+  margin: 0;
+}
+
+/* Main Styles */
+main {
+  background-color: #eee;
+  padding: 1rem;
+}
+
+.mainTable {
+  border-radius: 10px;
+  overflow: hidden;
+  padding-bottom: 5rem;
+}
